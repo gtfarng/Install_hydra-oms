@@ -1,0 +1,21 @@
+common: &common
+  label: ''
+  type: string
+
+order_type:
+  code: support_request
+  name: Support Request
+  print_form_code: print_form_code
+  fields:
+    creationDate:
+      type: datetime
+      label: Creation date
+    problemDescription:
+      <<: *common
+      label: Problem description
+    contractNumber:
+      type: number
+      label: Contract number
+    orderStatus:
+      <<: *common
+      label: Order Status

@@ -1,0 +1,27 @@
+= simple_form_for(@order,
+                  url: orders_path,
+                  html: { role: 'form'} ) do |f|
+  %h3= t('orders.new.title')
+  = render partial: 'layouts/form_errors', locals: { record: @order }
+  .form-group.string.optional
+    %label.string.optional.control-label= t('orders.new.label')
+    = order_type_picker :order_type_id, value: @order.order_type_id
+  = f.simple_fields_for :data do |data|
+    = render partial: 'form_fields', locals: { f: data }
+  = render partial: 'common_form_fields', locals: { f: f }
+  %input(name="order_type_id" value="#{@order.order_type_id}" type="hidden")
+  = f.submit t('add'), class: 'btn btn-primary pull-right'
+:coffee
+  $('.order_type-picker').change ->
+    $.ajax 'new',
+      type: 'GET'
+      dataType: 'html'
+      data: {
+        order_type_id: $('.order_type-picker').val()
+        partial_name: "new_form"}
+      success: (data, textStatus, jqXHR) ->
+            $('.new_order').html(data)
+            eval($('.new_order script').text())
+
+  Application.enableDateTimePicker(true)
+  Application.enableOrderTypePicker(false)

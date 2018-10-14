@@ -1,0 +1,5 @@
+FROM latera/homs_base:latest
+
+COPY public/doc/ /opt/homs/public/doc/
+
+ENTRYPOINT ["/entrypoint.sh"]

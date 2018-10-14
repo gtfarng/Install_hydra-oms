@@ -1,0 +1,257 @@
+// import the CSS framework
+@import 'hbw/variables'
+@import 'bootstrap'
+
+main.container
+  padding-bottom: 80px
+  width: 100%
+  margin-top: 51px // accommodate the navbar
+  padding-left: 0
+  padding-right: 0
+
+.authform
+  padding-top: 30px
+  max-width: 320px
+  margin: 0 auto
+
+  form
+    padding-bottom: 40px
+
+  .right
+    float: right !important
+
+#error_explanation
+  color: $state-danger-text
+
+  ul
+    color: $state-danger-text
+    margin: 0 0 30px 0
+
+  &:empty
+    display: none
+
+  h2
+    font-size: 16px
+
+.attribute-row
+  padding-top: .25em
+  padding-bottom: .25em
+
+  &:hover
+    background-color: #f7f7f7
+
+  .value
+    display: inline-block
+    margin-left: .4em
+
+.table-nowrap
+  th, td
+    white-space: nowrap
+
+.overflow-visible
+  overflow: visible !important
+
+.total-items
+  padding-left: 2px
+
+.orders-list
+  tbody tr:hover
+    background-color: #eee
+
+  .order-list-container
+    .multiselect-native-select
+      .btn
+        padding-left: 0
+
+      .dropdown-menu > li:not(.active) > a:focus
+        text-decoration: none
+        color: #7b8a8b
+        background-color: inherit
+
+      li.disabled > a
+        &:hover, &:focus
+          background: #2c3e50
+
+        label
+          cursor: not-allowed
+
+    .btn-link:focus
+      text-decoration: none
+
+    .table-hover
+      margin-bottom: 0
+
+    .order-list-table
+      overflow: auto
+      margin-bottom: 21px
+
+      th:hover
+        background-color: #f5f5f5
+        cursor: pointer
+
+      th > i
+        margin-left: 10px
+
+    .show-more-container
+      text-align: center
+
+    .show-more-container:hover
+      background-color: #f5f5f5
+      cursor: pointer
+
+    .show-more-container.requesting
+      background-size: 40px 40px
+      @include gradient-striped($color: lightgray)
+      @include animation(progress-bar-stripes 2s linear infinite)
+      @include progress-bar-variant($btn-default-border)
+      background-color: #f5f5f5
+
+
+div.orders-list
+  tbody > tr.expired
+    td
+      background-color: #ffe4e1
+
+  tbody > tr.about-to-expire
+    td
+      background-color: #ffffe0
+
+  tbody > tr.expired:hover, tbody > tr.about-to-expire:hover
+    td
+      background-color: #f5f5f5
+
+.orders-filter
+  .select2-selection__rendered
+    width: 100%
+
+  .label-padding-top
+    padding-top: 26px
+
+  .label-padding-left-0px
+    padding-left: 0px
+
+  .padding-right-0px
+    padding-right: 0px
+
+  [class^="col-"]
+    margin-bottom: .3em
+
+    .no-margin-bottom
+      margin-bottom: 0
+
+    .margin-top-10px
+      margin-top: 10px
+
+.orders-filter-container
+  margin-bottom: 20px
+
+  .tab-content
+    padding-top: 20px
+    padding-bottom: 20px
+
+#hbw-tasks
+  .hbw-sheet
+    top: 60px
+
+.greeting
+  margin-top: 10%
+  margin-bottom: 10% !important
+  background-color: rgba(44, 62, 80, 0.3)
+
+.greeting-text
+  margin-top: 5% !important
+  margin-bottom: 5% !important
+
+.modal.in
+  .modal-dialog
+    position: initial
+
+.btn-file input[type=file]
+  max-width: 100%
+  max-height: 100%
+
+.logo
+  a, &:hover
+    font-size: 20px
+    color: white !important
+    text-decoration: none
+
+  img
+    width: 18px
+    height: 18px
+    display: inline
+    margin: -20px 0 0 -5px
+
+input
+  &[type=checkbox]
+    display: none
+
+input
+  &[type=checkbox]
+    + span:before
+      font-family: FontAwesome
+      display: inline-block
+
+input
+  &[type=checkbox]:checked
+    + span:before
+      content: "\f046"
+
+input
+  &[type=checkbox]:disabled
+    + span:before
+      color: #D3D3D3
+
+input
+  &[type=checkbox]
+    + span:before
+      content: "\f096"
+
+.checkbox
+  padding-left: 0px !important
+
+.order_data_group
+  font-size: 1.5em
+  a.fa
+    color: #465c66 !important
+  a.disabled
+    cursor: not-allowed
+  a:hover
+    text-decoration: none
+
+.print-dropdown
+  margin-right: 0.5em
+
+.collapsable
+  a
+    cursor: pointer
+
+#custom-field-filter-container
+  margin-left: -30px
+
+  .custom-field-filter
+    margin-bottom: 20px
+
+    .label-overflow
+      cursor: pointer
+      width: 90%
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+    .label-checkbox
+      margin-bottom: 0.3em
+
+    .checkbox-margin
+      margin: 10px 5px 19px
+
+    .custom-field-filter-close
+      display: none
+      float: right
+      cursor: pointer
+
+    &:hover .custom-field-filter-close
+      display: inline-block
+
+  .custom-field-filter-date
+    width: 75%
